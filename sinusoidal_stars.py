@@ -1,20 +1,20 @@
 width = int(input("Genişlik değerini girin : "))
 height = int(input("Yükseklik değerini girin : "))
 
-pos = 0
-direction = -1
+pos = 1
+direction = 1
 
-for i in range(height):
-    if (i + width) % width == 0:
-        direction *= -1
-    
-    pos += direction
-    
-    for j in range(width):
-        if (j + 1) % (pos + 1) == 0:
-            print("*", end="")
+for i in range(1, height + 1):  
+    for j in range(1, width + 1):
+        if j % pos == 0:
+            print("*")
+            
+            print("j , width", j , width)
+            if j % width == 0:
+                direction *= -1
+            
+            pos += direction
+            
             break
-            
-        print(" ", end="")
-            
-    print("")
+        else:
+            print(" ", end="") 
